@@ -2,7 +2,7 @@
  * アドグル — サイト内ページのみを検索（外部インターネット検索は行わない）
  * public に置き、Vite のビルドで dist にそのままコピーされる。
  */
-var INDEX_URL = "/data/search-index.json";
+var INDEX_URL = "../data/search-index.json";
 
 function normalizeQuery(raw) {
   if (!raw || typeof raw !== "string") return "";
