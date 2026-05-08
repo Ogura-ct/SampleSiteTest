@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Murder Mystery — Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" crossorigin href="/assets/common-Zg1MjUBF.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <a href="./index.html" class="app-brand">Murder Mystery Web</a>
+        <nav class="app-nav" aria-label="主要ナビ">
+          <a href="./play.html" class="nav-link">プレイ卓（試作）</a>
+          <a href="./story/adoguru.html" class="nav-link">アドグル（検索）</a>
+          <a href="./story/dark-gateway.html" class="nav-link">ダークゲート</a>
+        </nav>
+      </header>
+      <main class="app-main">
+        <div class="page">
+          <h1>試作ホーム</h1>
+          <p>
+            マダミス向けの2系統を同じサイトに載せています。上のナビからそれぞれ開けます（HTML +
+            CSS + JavaScript ベース）。
+          </p>
+          <div class="card-grid">
+            <a href="./play.html" class="home-card">
+              <span class="tag">Session</span>
+              <h2>プレイ卓（ココフォリア風）</h2>
+              <p>
+                チャット・マップ風キャンバス・ダイスなど、オンライン卓の最低限の骨格イメージ。
+              </p>
+            </a>
+            <a href="./story/adoguru.html" class="home-card">
+              <span class="tag">Search</span>
+              <h2>アドグル</h2>
+              <p>
+                作中の検索ポータル。サイト内の記事だけを対象にし、ヒット先のページへ飛びます。
+              </p>
+            </a>
+            <a href="./story/dark-gateway.html" class="home-card">
+              <span class="tag">Hidden</span>
+              <h2>ダークゲート（検索対象外）</h2>
+              <p>
+                アドグルに載せないダークウェブ風ページ。URL を知っている場合のみ。
+              </p>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

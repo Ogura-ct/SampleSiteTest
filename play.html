@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プレイ卓 — Murder Mystery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/play-D_MOY4-6.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/play-y-r9Suay.css">
+    <link rel="stylesheet" crossorigin href="/assets/common-Zg1MjUBF.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <a href="./index.html" class="app-brand">Murder Mystery Web</a>
+        <nav class="app-nav" aria-label="主要ナビ">
+          <a href="./play.html" class="nav-link is-active">プレイ卓（試作）</a>
+          <a href="./story/adoguru.html" class="nav-link">アドグル</a>
+          <a href="./story/dark-gateway.html" class="nav-link">ダークゲート</a>
+        </nav>
+      </header>
+      <main class="app-main">
+        <div class="play-room">
+          <div class="play-room__bar">
+            <h1 class="play-room__title">試作卓 — 霧ヶ峰ロッジ事件（仮）</h1>
+            <span class="play-room__meta">接続: ローカル試行 / 3 名表示</span>
+          </div>
+          <div class="play-room__body">
+            <section class="play-room__stage-wrap" aria-label="マップとツール">
+              <div class="play-room__tabs" role="tablist">
+                <button
+                  type="button"
+                  role="tab"
+                  class="play-room__tab is-on"
+                  data-tab="map"
+                  aria-selected="true"
+                >
+                  マップ
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  class="play-room__tab"
+                  data-tab="memo"
+                  aria-selected="false"
+                >
+                  メモ
+                </button>
+              </div>
+              <div class="play-room__stage">
+                <div
+                  id="play-panel-map"
+                  class="play-room__canvas"
+                  aria-label="マップ風キャンバス"
+                >
+                  <div class="play-room__token play-room__token--a" title="探索者A">
+                    A
+                  </div>
+                  <div class="play-room__token play-room__token--b" title="探索者B">
+                    B
+                  </div>
+                  <div class="play-room__token play-room__token--c" title="NPC">N</div>
+                </div>
+                <div
+                  id="play-panel-memo"
+                  class="play-room__canvas play-room__canvas--memo play-room__panel--hidden"
+                  aria-hidden="true"
+                >
+                  共有メモのプレースホルダー
+                </div>
+                <div class="play-room__toolbar">
+                  <button type="button" class="play-room__tool-btn" id="play-btn-dice">
+                    ダイス 1d100
+                  </button>
+                  <span
+                    class="play-room__meta play-room__dice-out"
+                    id="play-dice-result"
+                    aria-live="polite"
+                  ></span>
+                </div>
+              </div>
+            </section>
+            <aside class="play-room__chat" aria-label="チャット">
+              <div class="play-room__chat-head">チャット</div>
+              <div class="play-room__log" id="play-chat-log">
+                <p class="play-room__msg play-room__msg--system">
+                  GM が卓を開きました（試作UI・同期なし）
+                </p>
+                <p class="play-room__msg">
+                  <b>GM</b> 今日はよろしくお願いします。まずは自己紹介からお願いします。
+                </p>
+                <p class="play-room__msg"><b>探索者A</b> 了解です。私から簡単に。</p>
+              </div>
+              <div class="play-room__composer">
+                <input
+                  class="play-room__input"
+                  id="play-chat-input"
+                  placeholder="メッセージ（送信は見た目のみ）"
+                  aria-label="チャット入力"
+                />
+                <button type="button" class="play-room__send" id="play-btn-send">
+                  送信
+                </button>
+              </div>
+            </aside>
+          </div>
+          <footer class="play-room__handout">
+            <strong>手元カード（試作）:</strong> 公開情報カード 1 / 未読の手紙（演出用テキストは
+            <code style="margin: 0 0.2em">ストーリー/</code>
+            側で管理する想定）
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

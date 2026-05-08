@@ -1,0 +1,70 @@
+{
+  "pages": [
+    {
+      "url": "/story/cthulhu-mythos.html",
+      "title": "クトゥルフ神話について — 概説と主要な神格",
+      "snippet": "H・P・ラヴクラフトを中心に発展した架空の神話体系。旧支配者や宇宙の恐怖を描く。主要神：アザトース、ヨグ＝ソトース、ナイアルラトホテップ、クトゥルフ、シュブ＝ニグラス、ハスターなど。",
+      "searchText": "クトゥルフ神話 クトゥルフ ラヴクラフト 旧支配者 グレート・オールド・ワン ナイアルラトホテップ ヨグソトース ヨグ＝ソトース アザトース シュブニグラス シュブ＝ニグラス ハスター ニャルラトホテップ 宇宙 恐怖 神話 概説"
+    },
+    {
+      "url": "/story/news-incident.html",
+      "title": "都内配信者不審死、現場に謎のURLメモ",
+      "snippet": "人気配信者の不審死。警察は事件性なし寄り、SNSでは「黒いリンク」憶測が拡散。",
+      "searchText": "事件 ニュース 配信者 不審死 タワーマンション URL メモ 黒いリンク 事件性なし 社会"
+    },
+    {
+      "url": "/story/news-infopollution-cases.html",
+      "title": "「黒いリンク」類似の情報汚染案件3選",
+      "snippet": "デマ拡散、呪い画像騒動、内部リーク炎上。手口が似る3件を比較整理。",
+      "searchText": "黒いリンク 類似 情報汚染 案件 3件 デマ 拡散 呪い画像 時刻改ざん 内部リーク 炎上"
+    },
+    {
+      "url": "/story/news-shiraminami-bullying.html",
+      "title": "白南中いじめ炎上、拡散投稿は文脈改変の可能性",
+      "snippet": "身内限定共有の流出から炎上した白南中案件。後に冤罪の可能性が示される。",
+      "searchText": "白南中 いじめ炎上 white_south_case mirror-key 身内限定共有 流出 文脈改変 匿名コミュ 冤罪 少女 転居"
+    },
+    {
+      "url": "/story/news-shiraminami-matome.html",
+      "title": "白南中いじめ炎上まとめ — 何が起き、何が拡散したのか",
+      "snippet": "少女がいじめ加害者と断定され炎上した経緯を整理。後続検証で冤罪可能性が示された。",
+      "searchText": "白南中 いじめ炎上 まとめ 少女 いじめ 加害者 断定 冤罪 拡散 テンプレ投稿 教師隠蔽 家族関与"
+    },
+    {
+      "url": "/story/opinion-flame-economy.html",
+      "title": "炎上は偶発か、設計か",
+      "snippet": "最近の炎上構造を解説するコラム。恐怖語りと断片拡散の問題を論じる。",
+      "searchText": "炎上 問題 コラム オピニオン 拡散 設計 恐怖語り 匿名アカウント 情報操作"
+    },
+    {
+      "url": "/story/y.html",
+      "title": "Y投稿: 次回配信予告 #ダークウェブ凸配信",
+      "snippet": "活動名KIRI（@kiri_streams）の予告投稿。次回配信で黒いリンクを検証すると宣言。",
+      "searchText": "Y SNS 投稿 予告 ダークウェブ凸配信 黒いリンク KIRI kiri_streams 活動名 実名非公開 配信者 mirror-key 同一構文 連鎖投稿 図形一致 記憶欠損 匿名コミュ 拡散速報 観測者L 都市伝説"
+    },
+    {
+      "url": "/story/y-shiraminami-1.html",
+      "title": "Y投稿: 白南中の件、流出時点で仕掛けられていた説",
+      "snippet": "拡散速報βの投稿。白南中いじめ炎上は身内限定共有の流出から始まった可能性。",
+      "searchText": "Y 白南中 いじめ炎上 身内限定共有 流出 拡散速報β flash_beta"
+    },
+    {
+      "url": "/story/y-shiraminami-2.html",
+      "title": "Y投稿: 匿名技術班 mk-7 の15秒切り抜き示唆",
+      "snippet": "匿名技術班 mk-7の投稿。白南中炎上は15秒切り抜きと mirror-key で設計された可能性。",
+      "searchText": "Y 白南中 いじめ炎上 mk-7 匿名技術班 mirror-key yek-r0rrim 15秒 切り抜き 文脈"
+    },
+    {
+      "url": "/story/y-shiraminami-3.html",
+      "title": "Y投稿: 白南中いじめ炎上は冤罪寄りという再検証",
+      "snippet": "都市伝説拾いの投稿。白南中案件は冤罪の可能性と初動投稿削除の問題を指摘。",
+      "searchText": "Y 白南中 いじめ炎上 冤罪 都市伝説拾い rumor_pick 初動投稿 削除 断片"
+    },
+    {
+      "url": "/story/y-shiraminami-matome.html",
+      "title": "Y投稿: 白南中いじめ炎上まとめ（匿名検証ログ）",
+      "snippet": "匿名アカウントによるまとめ投稿。炎上の発端と拡散で広まった主張を整理。",
+      "searchText": "Y 白南中 いじめ炎上 まとめ 匿名検証ログ anon_case_note 教師が隠蔽 家族も関与 同一テンプレ 検証前"
+    }
+  ]
+}

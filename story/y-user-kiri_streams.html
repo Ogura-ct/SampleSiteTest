@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Y / @kiri_streams</title>
+    <style>
+      body { margin: 0; font-family: "Noto Sans JP", system-ui, sans-serif; background:#f7f9f9; color:#0f1419; }
+      .wrap { max-width: 620px; margin: 0 auto; background:#fff; min-height:100vh; border-left:1px solid #eff3f4; border-right:1px solid #eff3f4; }
+      .top { padding: 10px 16px; border-bottom:1px solid #eff3f4; font-size:20px; font-weight:700; }
+      .profile { padding: 14px 16px; border-bottom:1px solid #eff3f4; display:flex; gap:12px; }
+      .avatar { width:48px; height:48px; border-radius:999px; object-fit:cover; background:#dce3e8; flex: 0 0 48px; }
+      .name { font-weight:700; font-size:20px; }
+      .id { color:#536471; font-size:14px; margin-top:2px; }
+      .note { color:#536471; font-size:13px; margin-top:8px; }
+      .post { display:flex; gap:12px; padding:14px 16px; border-bottom:1px solid #eff3f4; }
+      .main { min-width:0; width:100%; }
+      .meta { color:#536471; font-size:14px; margin-bottom:8px; display:flex; align-items:center; gap:6px; }
+      .meta .name-mini { color:#0f1419; font-weight:700; }
+      .text { font-size:23px; line-height:1.45; white-space:pre-wrap; }
+      .actions { margin-top:10px; display:flex; gap:20px; color:#536471; font-size:14px; }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="top">Y / ユーザー</div>
+      <section class="profile">
+        <img class="avatar" src="/imgs/Yicon.png" alt="KIRIのアイコン" />
+        <div>
+          <div class="name">KIRI</div>
+          <div class="id">@kiri_streams</div>
+          <div class="note">配信メモと検証ログを投稿する個人アカウント</div>
+        </div>
+      </section>
+      <article class="post">
+        <img class="avatar" src="/imgs/Yicon.png" alt="投稿者アイコン" />
+        <div class="main">
+          <div class="meta"><span class="name-mini">KIRI</span><span>@kiri_streams</span><span>・3時間</span></div>
+          <div class="text">配信前メモ:
+怖い噂ほど、最初に出た一次情報を確認する。
+切り抜きだけで断定しない。</div>
+          <div class="actions"><span>💬 66</span><span>🔁 91</span><span>❤ 844</span><span>📊 5,012</span><span>↗</span></div>
+        </div>
+      </article>
+      <article class="post">
+        <img class="avatar" src="/imgs/Yicon.png" alt="投稿者アイコン" />
+        <div class="main">
+          <div class="meta"><span class="name-mini">KIRI</span><span>@kiri_streams</span><span>・10月16日</span></div>
+          <div class="text">次回配信、やります。
+予告どおり #ダークウェブ凸配信
+
+噂の「黒いリンク」がただの作り話か、
+それとも本当にヤバいのか。
+自分の目で確かめます。</div>
+          <div class="actions"><span>💬 318</span><span>🔁 1,204</span><span>❤ 9,887</span><span>📊 10.4万</span><span>↗</span></div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>アドグル</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" crossorigin href="/assets/storyAdoguru-6SJP6BFd.css">
+  </head>
+  <body class="adoguru">
+    <header
+      class="adoguru-header adoguru-hidden"
+      id="adoguru-header-results"
+      aria-hidden="true"
+    >
+      <a href="./adoguru.html" class="adoguru-logo-sm" aria-label="アドグル ホーム"
+        >ア<span>ド</span>グル</a
+      >
+      <form class="adoguru-search-form-header" id="adoguru-form-bar" role="search">
+        <div class="adoguru-bar">
+          <input
+            type="search"
+            id="adoguru-q-bar"
+            class="adoguru-input"
+            name="q"
+            placeholder="サイト内の記事を検索"
+            autocomplete="off"
+            aria-label="検索ワード"
+          />
+        </div>
+        <button type="submit" class="adoguru-btn adoguru-btn--primary">検索</button>
+      </form>
+      <nav class="adoguru-footer-links">
+        <a href="../index.html">開発ホーム</a>
+      </nav>
+    </header>
+
+
+    <main id="adoguru-home">
+      <div class="adoguru-home">
+        <h1 class="adoguru-logo-big" aria-label="アドグル">
+          <span class="g1">ア</span><span class="g2">ド</span><span class="g3">グ</span
+          ><span class="g4">ル</span>
+        </h1>
+        <form class="adoguru-home-form" id="adoguru-form-home" role="search">
+          <div class="adoguru-bar">
+            <input
+              type="search"
+              id="adoguru-q-home"
+              class="adoguru-input"
+              name="q"
+              placeholder="サイト内の記事を検索（インターネット全体は検索しません）"
+              autocomplete="off"
+              aria-label="検索ワード"
+            />
+          </div>
+          <div class="adoguru-home-actions">
+            <button type="submit" class="adoguru-btn">アドグル 検索</button>
+          </div>
+        </form>
+        <p class="adoguru-meta">
+          この検索は当サイトに収録したページのみを対象とします（外部ウェブは検索しません）。インデックスに載せないページ（例:
+          ダークゲート）はヒットしません。
+        </p>
+      </div>
+    </main>
+
+    <section class="adoguru-results-wrap adoguru-hidden" id="adoguru-results" aria-live="polite">
+      <div class="adoguru-results">
+        <p class="adoguru-results-count" id="adoguru-count"></p>
+        <div id="adoguru-results-inner"></div>
+      </div>
+    </section>
+
+    <script src="/js/adoguru.js" defer></script>
+  </body>
+</html>

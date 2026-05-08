@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>■■ GATEWAY ■■ — 作中ダミー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" crossorigin href="/assets/darkweb-DaktcDiv.css">
+  </head>
+  <body class="darkweb">
+    <div class="darkweb-scan" aria-hidden="true"></div>
+    <div class="darkweb-wrap">
+      <p class="darkweb-banner" role="note">
+        <strong>フィクションです。</strong>
+        実在の違法サービス・Tor・マーケットとは無関係です。本作・開発用の演出であり、依頼や取引の記述はありません。
+      </p>
+
+      <header class="darkweb-head">
+        <p class="darkweb-onion" id="dw-onion">http://■■■■■■■■■■■■■■■■.onion</p>
+        <h1 class="darkweb-title">shadow relay / index</h1>
+        <p class="darkweb-sub">
+          アドグル検索の対象外（インデックス未登録）— URL を知る者のみ。
+        </p>
+        <div class="darkweb-status">
+          <span id="dw-conn">SESSION: …</span>
+          <span id="dw-lat">LATENCY: …</span>
+        </div>
+      </header>
+
+      <div class="darkweb-grid">
+        <section class="darkweb-card" aria-labelledby="dw-public">
+          <h2 id="dw-public">[ public / open index ]</h2>
+          <div class="darkweb-thread">
+            <div class="darkweb-meta">公開領域 · no password</div>
+            <p>板一覧・断片ログ・ダミー資料など、閲覧専用ページをまとめています。</p>
+          </div>
+          <ul>
+            <li><a href="./dark-forum.html">掲示板一覧（公開）</a></li>
+            <li><a href="./dark-thread-dummy.html">断片ログ置き場（ダミー）</a></li>
+          </ul>
+        </section>
+
+        <section class="darkweb-card" aria-labelledby="dw-private">
+          <h2 id="dw-private">[ private / restricted ]</h2>
+          <div class="darkweb-thread">
+            <div class="darkweb-meta">制限領域 · password required</div>
+            <p>掲示板ではなく、テーマ別の個別資料への限定リンクを管理する領域です。</p>
+          </div>
+          <ul>
+            <li><a href="./dark-private-index.html">各ページ一覧（限定公開）</a></li>
+          </ul>
+          <p class="darkweb-note" style="margin: 0.75rem 0 0">
+            実装イメージ用: 単純なパスワード一致チェックで閲覧可否を切り替えています。
+          </p>
+        </section>
+      </div>
+
+      <footer class="darkweb-footer">
+        <div class="darkweb-footer-nav">
+          <a href="./adoguru.html">アドグルへ</a>
+          <a href="../index.html">開発ホーム</a>
+        </div>
+        <p class="darkweb-note">
+          アドグル（search-index.json）にはこのページを登録していません。検索ではヒットしません。
+        </p>
+      </footer>
+    </div>
+    <script src="/js/dark-gateway.js" defer></script>
+  </body>
+</html>

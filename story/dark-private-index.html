@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>private / limited index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" crossorigin href="/assets/darkweb-DaktcDiv.css">
+  </head>
+  <body class="darkweb">
+    <div class="darkweb-scan" aria-hidden="true"></div>
+    <div class="darkweb-wrap">
+      <header class="darkweb-head">
+        <p class="darkweb-onion">private / limited index</p>
+        <h1 class="darkweb-title">各ページ一覧（限定公開）</h1>
+        <p class="darkweb-sub">リンク選択後に簡易パスワード確認（実装イメージ）</p>
+      </header>
+
+      <section class="darkweb-card" id="private-list">
+        <h2>[ limited pages ]</h2>
+        <ul>
+          <li><a href="./dark-private-starwisdom.html" id="star-link">星の智慧派</a></li>
+        </ul>
+      </section>
+
+      <section class="darkweb-card dw-hidden" id="auth-box">
+        <h2>[ access check ]</h2>
+        <p class="darkweb-note">「星の智慧派」を開くにはパスワード入力が必要です。</p>
+        <div class="dw-auth-row">
+          <input id="pw-input" class="dw-input" type="password" placeholder="password" />
+          <button id="pw-btn" class="dw-btn" type="button">unlock</button>
+        </div>
+        <p id="pw-msg" class="darkweb-note" style="margin-top: 0.6rem"></p>
+      </section>
+
+      <footer class="darkweb-footer">
+        <div class="darkweb-footer-nav">
+          <a href="./dark-gateway.html">ゲートへ戻る</a>
+          <a href="./dark-forum.html">掲示板一覧</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        var PASSWORD = "star1844";
+        var input = document.getElementById("pw-input");
+        var btn = document.getElementById("pw-btn");
+        var msg = document.getElementById("pw-msg");
+        var authBox = document.getElementById("auth-box");
+        var starLink = document.getElementById("star-link");
+        var pendingUrl = "";
+
+        function unlock() {
+          var v = input.value || "";
+          if (v === PASSWORD) {
+            msg.textContent = "access granted";
+            msg.style.color = "#39ff14";
+            if (pendingUrl) window.location.href = pendingUrl;
+          } else {
+            msg.textContent = "access denied";
+            msg.style.color = "#f87171";
+          }
+        }
+
+        starLink.addEventListener("click", function (e) {
+          e.preventDefault();
+          pendingUrl = starLink.getAttribute("href");
+          authBox.classList.remove("dw-hidden");
+          msg.textContent = "";
+          input.value = "";
+          input.focus();
+        });
+        btn.addEventListener("click", unlock);
+        input.addEventListener("keydown", function (e) {
+          if (e.key === "Enter") unlock();
+        });
+      })();
+    </script>
+    <script src="/js/dark-gateway.js" defer></script>
+  </body>
+</html>

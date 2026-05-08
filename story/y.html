@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Y</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Noto Sans JP", system-ui, -apple-system, sans-serif;
+        background: #f7f9f9;
+        color: #0f1419;
+      }
+      .wrap {
+        max-width: 620px;
+        margin: 0 auto;
+        min-height: 100vh;
+        background: #fff;
+        border-left: 1px solid #eff3f4;
+        border-right: 1px solid #eff3f4;
+      }
+      .top {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 10px 16px;
+        border-bottom: 1px solid #eff3f4;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 28px;
+      }
+      .back {
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+      .back:hover {
+        background: #eff3f4;
+      }
+      .top-title {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .post {
+        padding: 14px 16px;
+        border-bottom: 1px solid #eff3f4;
+        display: flex;
+        gap: 12px;
+      }
+      .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        object-fit: cover;
+        background: #dce3e8;
+        flex: 0 0 48px;
+      }
+      .post-main {
+        min-width: 0;
+        width: 100%;
+      }
+      .user {
+        display: flex;
+        gap: 6px;
+        font-size: 19px;
+        margin-bottom: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .name {
+        font-weight: 700;
+      }
+      .name-link {
+        color: inherit;
+        text-decoration: none;
+      }
+      .name-link:hover {
+        text-decoration: underline;
+      }
+      .id,
+      .time,
+      .meta {
+        color: #536471;
+      }
+      .id,
+      .time {
+        font-size: 14px;
+      }
+      .meta {
+        margin-bottom: 10px;
+        font-size: 13px;
+      }
+      .text {
+        font-size: 32px;
+        line-height: 1.4;
+        white-space: pre-wrap;
+      }
+      .tag {
+        color: #1d9bf0;
+      }
+      .stat {
+        margin-top: 12px;
+        color: #536471;
+        font-size: 14px;
+      }
+      .actions {
+        margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        color: #536471;
+        font-size: 18px;
+        border-top: 1px solid #eff3f4;
+        border-bottom: 1px solid #eff3f4;
+        padding: 10px 6px;
+      }
+      .replybox {
+        padding: 12px 16px;
+        border-bottom: 1px solid #eff3f4;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .replyhint {
+        color: #536471;
+        font-size: 22px;
+        flex: 1;
+      }
+      .replybtn {
+        border: 0;
+        background: #8ecdf8;
+        color: #fff;
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-weight: 700;
+      }
+      .reply {
+        padding: 14px 16px;
+        border-bottom: 1px solid #eff3f4;
+        display: flex;
+        gap: 12px;
+      }
+      .reply .text {
+        font-size: 19px;
+        line-height: 1.5;
+      }
+      .subhead {
+        padding: 10px 16px;
+        color: #536471;
+        font-size: 14px;
+        border-bottom: 1px solid #eff3f4;
+      }
+      .mini {
+        padding: 12px 16px;
+        border-bottom: 1px solid #eff3f4;
+        display: flex;
+        gap: 10px;
+      }
+      .mini .avatar {
+        width: 40px;
+        height: 40px;
+        flex: 0 0 40px;
+      }
+      .mini .user {
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .mini .text {
+        font-size: 16px;
+        line-height: 1.45;
+      }
+      .mini .actions {
+        border: 0;
+        padding: 8px 0 0;
+        margin-top: 2px;
+        font-size: 14px;
+        justify-content: flex-start;
+        gap: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="top">
+        <span class="back">←</span>
+        <span class="top-title">ポスト</span>
+      </div>
+      <article class="post">
+        <img
+          class="avatar"
+          src="/imgs/Yicon.png"
+          alt="KIRIのアイコン"
+          onerror="this.style.display='none'"
+        />
+        <div class="post-main">
+          <div class="user">
+            <a class="name name-link" href="./y-user-kiri_streams.html">KIRI</a>
+            <span class="id">@kiri_streams</span>
+            <span class="time">・10月16日</span>
+          </div>
+          <div class="meta">※活動名アカウント（実名非公開）</div>
+          <div class="text">
+次回配信、やります。
+予告どおり <span class="tag">#ダークウェブ凸配信</span>
+
+噂の「黒いリンク」がただの作り話か、
+それとも本当にヤバいのか。
+自分の目で確かめます。
+          </div>
+          <div class="stat">午後1:42・20XX年10月16日・10.4万件の表示</div>
+          <div class="actions">
+            <span>💬 318</span>
+            <span>🔁 1,204</span>
+            <span>❤ 9,887</span>
+            <span>🔖 421</span>
+            <span>⤴</span>
+          </div>
+        </div>
+      </article>
+      <section class="replybox">
+        <img
+          class="avatar"
+          src="/imgs/y3.png"
+          alt="返信用アイコン"
+          onerror="this.style.display='none'"
+        />
+        <div class="replyhint">返信をポスト</div>
+        <button class="replybtn" type="button">返信</button>
+      </section>
+      <article class="reply">
+        <img class="avatar" src="/imgs/y2.png" alt="返信者アイコン" />
+        <div class="post-main">
+          <div class="user">
+            <a class="name name-link" href="./y-user-lifehack_masa.html">Masa | Life Hack研究所</a>
+            <span class="id">@lifehack_masa</span>
+            <span class="time">・2時間</span>
+          </div>
+          <div class="text">
+怖いなら無理しないでほしいけど、
+配信めっちゃ気になる。気をつけて。
+          </div>
+        </div>
+      </article>
+      <article class="reply">
+        <img class="avatar" src="/imgs/y4.png" alt="返信者アイコン" />
+        <div class="post-main">
+          <div class="user">
+            <a class="name name-link" href="./y-user-trace_watcher.html">匿名ログ監視</a>
+            <span class="id">@trace_watcher</span>
+            <span class="time">・1時間</span>
+          </div>
+          <div class="text">
+この件、同時刻に同じ文面の投稿が他所でも出てる。
+自然発生ってより、誰かが流してる感じする。
+          </div>
+        </div>
+      </article>
+      <article class="reply">
+        <img class="avatar" src="/imgs/y5.png" alt="返信者アイコン" />
+        <div class="post-main">
+          <div class="user">
+            <a class="name name-link" href="./y-user-late_night_cat.html">夜更かしの猫</a>
+            <span class="id">@late_night_cat</span>
+            <span class="time">・48分</span>
+          </div>
+          <div class="text">
+黒いリンク、開くのはやめた方がいい。
+見たって人の話、記憶飛んでる報告ばっかで怖い。
+          </div>
+        </div>
+      </article>
+
+      <div class="subhead">関連ポスト</div>
+      <article class="mini">
+        <img class="avatar" src="/imgs/y1.png" alt="投稿者アイコン" />
+        <div class="post-main">
+          <div class="user">
+            <a class="name name-link" href="./y-user-flash_beta.html">拡散速報β</a>
+            <span class="id">@flash_beta</span>
+            <span class="time">・3時間</span>
+          </div>
+          <div class="text">
+白南中の件、また掘られてる。  
+身内限定の動画が外に出た時点で、誰かが仕掛けてた説が濃い。  
+          </div>
+          <div class="actions">
+            <span>💬 41</span>
+            <span>🔁 122</span>
+            <span>❤ 366</span>
+          </div>
+        </div>
+      </article>
+      <article class="mini">
+        <img class="avatar" src="/imgs/y3.png" alt="投稿者アイコン" />
+        <div class="post-main">
+          <div class="user">
+            <a class="name name-link" href="./y-user-yek-r0rrim.html">匿名技術班 mk-7</a>
+            <span class="id">@yek-r0rrim</span>
+            <span class="time">・2時間</span>
+          </div>
+          <div class="text">
+白南中の炎上、最初に出たのは本編じゃなく15秒版。  
+文脈切って燃やすのはいつもの手順だよ。
+          </div>
+          <div class="actions">
+            <span>💬 18</span>
+            <span>🔁 54</span>
+            <span>❤ 209</span>
+          </div>
+        </div>
+      </article>
+      <article class="mini">
+        <img class="avatar" src="/imgs/y2.png" alt="投稿者アイコン" />
+        <div class="post-main">
+          <div class="user">
+            <a class="name name-link" href="./y-user-rumor_pick.html">都市伝説拾い</a>
+            <span class="id">@rumor_pick</span>
+            <span class="time">・1時間</span>
+          </div>
+          <div class="text">
+白南中いじめ炎上、結局あの子は冤罪寄りって検証出てる。  
+でも拡散初動の投稿はもう消えてて、追えるのは断片だけ。  
+          </div>
+          <div class="actions">
+            <span>💬 27</span>
+            <span>🔁 31</span>
+            <span>❤ 144</span>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
