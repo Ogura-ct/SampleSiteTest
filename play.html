@@ -10,13 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+JP:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="./assets/play-D_MOY4-6.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/play-y-r9Suay.css">
-    <link rel="stylesheet" crossorigin href="./assets/common-Zg1MjUBF.css">
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/play.css" />
   </head>
   <body>
-    <div class="app-shell">
-      <header class="app-header">
+    <div class="app-shell app-shell--play">
+      <header class="app-header app-header--play">
         <a href="./index.html" class="app-brand">Murder Mystery Web</a>
         <nav class="app-nav" aria-label="主要ナビ">
           <a href="./play.html" class="nav-link is-active">プレイ卓（試作）</a>
@@ -24,98 +23,355 @@
           <a href="./story/dark-gateway.html" class="nav-link">ダークゲート</a>
         </nav>
       </header>
-      <main class="app-main">
-        <div class="play-room">
-          <div class="play-room__bar">
-            <h1 class="play-room__title">試作卓 — 霧ヶ峰ロッジ事件（仮）</h1>
-            <span class="play-room__meta">接続: ローカル試行 / 3 名表示</span>
+      <main class="app-main app-main--play">
+        <div class="play-table" id="play-table">
+          <div class="play-table__bar">
+            <h1 class="play-table__title">試作卓 — 配置ワイヤーフレーム</h1>
+            <div class="play-table__bar-actions">
+              <span class="play-table__meta"
+                >PL黄丸をマップへドラッグ / ヒントはログイン後・右クリック</span
+              >
+              <span id="play-session-badge" class="play-session-badge" hidden></span>
+              <button type="button" class="play-table__bar-btn" id="play-btn-login">
+                ログイン
+              </button>
+              <button type="button" class="play-table__bar-btn" id="play-btn-logout" hidden>
+                ログアウト
+              </button>
+            </div>
           </div>
-          <div class="play-room__body">
-            <section class="play-room__stage-wrap" aria-label="マップとツール">
-              <div class="play-room__tabs" role="tablist">
-                <button
-                  type="button"
-                  role="tab"
-                  class="play-room__tab is-on"
-                  data-tab="map"
-                  aria-selected="true"
-                >
-                  マップ
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  class="play-room__tab"
-                  data-tab="memo"
-                  aria-selected="false"
-                >
-                  メモ
-                </button>
-              </div>
-              <div class="play-room__stage">
-                <div
-                  id="play-panel-map"
-                  class="play-room__canvas"
-                  aria-label="マップ風キャンバス"
-                >
-                  <div class="play-room__token play-room__token--a" title="探索者A">
-                    A
-                  </div>
-                  <div class="play-room__token play-room__token--b" title="探索者B">
-                    B
-                  </div>
-                  <div class="play-room__token play-room__token--c" title="NPC">N</div>
-                </div>
-                <div
-                  id="play-panel-memo"
-                  class="play-room__canvas play-room__canvas--memo play-room__panel--hidden"
-                  aria-hidden="true"
-                >
-                  共有メモのプレースホルダー
-                </div>
-                <div class="play-room__toolbar">
-                  <button type="button" class="play-room__tool-btn" id="play-btn-dice">
-                    ダイス 1d100
-                  </button>
-                  <span
-                    class="play-room__meta play-room__dice-out"
-                    id="play-dice-result"
-                    aria-live="polite"
-                  ></span>
+
+          <div class="play-table__main" aria-label="卓メイン">
+            <div class="play-table__stage">
+            <aside class="play-table__players play-table__cell-pl" aria-label="プレイヤー立ち絵枠">
+              <div class="play-table__pl-stack">
+              <div class="play-pl" data-pl="1">
+                <header class="play-pl__header">神代 玲司</header>
+                <div class="play-pl__body">
+                  <img
+                    class="play-pl__img"
+                    src="imgs/PL1_神代玲司.png"
+                    alt="PL1 神代玲司"
+                    width="280"
+                    height="420"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="play-pl__handle"
+                    draggable="true"
+                    data-pl="1"
+                    data-label="PL1"
+                    title="マップへドラッグ"
+                    role="button"
+                    tabindex="0"
+                    aria-label="PL1 をマップに配置"
+                  ></div>
                 </div>
               </div>
-            </section>
-            <aside class="play-room__chat" aria-label="チャット">
-              <div class="play-room__chat-head">チャット</div>
-              <div class="play-room__log" id="play-chat-log">
-                <p class="play-room__msg play-room__msg--system">
-                  GM が卓を開きました（試作UI・同期なし）
-                </p>
-                <p class="play-room__msg">
-                  <b>GM</b> 今日はよろしくお願いします。まずは自己紹介からお願いします。
-                </p>
-                <p class="play-room__msg"><b>探索者A</b> 了解です。私から簡単に。</p>
+              <div class="play-pl" data-pl="2">
+                <header class="play-pl__header">三枝 悠真</header>
+                <div class="play-pl__body">
+                  <img
+                    class="play-pl__img"
+                    src="imgs/PL2_三枝悠真.png"
+                    alt="PL2 三枝悠真"
+                    width="280"
+                    height="420"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="play-pl__handle"
+                    draggable="true"
+                    data-pl="2"
+                    data-label="PL2"
+                    title="マップへドラッグ"
+                    role="button"
+                    tabindex="0"
+                    aria-label="PL2 をマップに配置"
+                  ></div>
+                </div>
               </div>
-              <div class="play-room__composer">
-                <input
-                  class="play-room__input"
-                  id="play-chat-input"
-                  placeholder="メッセージ（送信は見た目のみ）"
-                  aria-label="チャット入力"
-                />
-                <button type="button" class="play-room__send" id="play-btn-send">
-                  送信
-                </button>
+              <div class="play-pl" data-pl="3">
+                <header class="play-pl__header">深見 朱莉</header>
+                <div class="play-pl__body">
+                  <img
+                    class="play-pl__img"
+                    src="imgs/PL3_深見朱莉.png"
+                    alt="PL3 深見朱莉"
+                    width="280"
+                    height="420"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="play-pl__handle"
+                    draggable="true"
+                    data-pl="3"
+                    data-label="PL3"
+                    title="マップへドラッグ"
+                    role="button"
+                    tabindex="0"
+                    aria-label="PL3 をマップに配置"
+                  ></div>
+                </div>
+              </div>
+              <div class="play-pl" data-pl="4">
+                <header class="play-pl__header">戸倉 蓮</header>
+                <div class="play-pl__body">
+                  <img
+                    class="play-pl__img"
+                    src="imgs/PL4_戸倉蓮.png"
+                    alt="PL4 戸倉蓮"
+                    width="280"
+                    height="420"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="play-pl__handle"
+                    draggable="true"
+                    data-pl="4"
+                    data-label="PL4"
+                    title="マップへドラッグ"
+                    role="button"
+                    tabindex="0"
+                    aria-label="PL4 をマップに配置"
+                  ></div>
+                </div>
+              </div>
               </div>
             </aside>
+
+            <div class="play-table__cell-hints">
+            <div class="play-table__center">
+              <div
+                id="play-hints-locked"
+                class="play-hints-locked"
+                aria-live="polite"
+              >
+                <p class="play-hints-locked__title">ヒントエリア</p>
+                <p class="play-hints-locked__text">
+                  ログイン前はヒントカードは表示されません（枚数も分かりません）。上部の「ログイン」から入ってください。
+                </p>
+              </div>
+              <div
+                class="play-table__hints play-table__hints--hidden"
+                id="play-hints-grid"
+                aria-label="ヒントカード"
+                hidden
+              ></div>
+            </div>
+            </div>
+
+            <div class="play-table__right-rail">
+              <div class="play-table__flow play-table__flow--rail" aria-label="全体の流れ">
+                <span class="play-table__flow-label">全体の流れ</span>
+                <ol class="play-flow-steps">
+                  <li class="play-flow-steps__item">
+                    <span class="play-flow-steps__title">あらすじ・ルールの確認</span>
+                  </li>
+                  <li class="play-flow-steps__item">
+                    <span class="play-flow-steps__title">キャラクター決定</span>
+                  </li>
+                  <li class="play-flow-steps__item">
+                    <span class="play-flow-steps__title">HO・共有情報読み込み</span>
+                    <span class="play-flow-steps__time">25分</span>
+                  </li>
+                  <li class="play-flow-steps__item">
+                    <span class="play-flow-steps__title">オープニング読み合わせ</span>
+                    <span class="play-flow-steps__time">5分</span>
+                  </li>
+                  <li class="play-flow-steps__item">
+                    <span class="play-flow-steps__title">前半議論</span>
+                    <span class="play-flow-steps__time">40分</span>
+                  </li>
+                  <li class="play-flow-steps__item">
+                    <span class="play-flow-steps__title">幕間読み合わせ</span>
+                    <span class="play-flow-steps__time">10分</span>
+                  </li>
+                  <li class="play-flow-steps__item">
+                    <span class="play-flow-steps__title">追加HO読み込み + 休憩</span>
+                    <span class="play-flow-steps__time">10分</span>
+                  </li>
+                  <li class="play-flow-steps__item">
+                    <span class="play-flow-steps__title">推理披露</span>
+                    <span class="play-flow-steps__time">3分程度</span>
+                  </li>
+                  <li class="play-flow-steps__item">
+                    <span class="play-flow-steps__title">後半議論</span>
+                    <span class="play-flow-steps__time">50分</span>
+                  </li>
+                  <li class="play-flow-steps__item">
+                    <span class="play-flow-steps__title">回答フェイズ</span>
+                    <span class="play-flow-steps__time">10分</span>
+                  </li>
+                  <li class="play-flow-steps__item">
+                    <span class="play-flow-steps__title">エンディング</span>
+                  </li>
+                </ol>
+              </div>
+              <section
+                class="play-table__map play-table__cell-map"
+                id="play-map-drop"
+                aria-label="マップ"
+              >
+                <span class="play-table__map-title">マップ</span>
+                <div class="play-table__map-surface" id="play-map-surface">
+                  <div class="play-table__map-tokens" id="play-map-tokens" aria-live="polite"></div>
+                </div>
+              </section>
+            </div>
+            </div>
           </div>
-          <footer class="play-room__handout">
-            <strong>手元カード（試作）:</strong> 公開情報カード 1 / 未読の手紙（演出用テキストは
-            <code style="margin: 0 0.2em">ストーリー/</code>
-            側で管理する想定）
-          </footer>
+
+          <section class="play-table__chat" aria-label="チャット">
+            <div class="play-table__chat-head">チャット（試作）</div>
+            <div class="play-table__log" id="play-chat-log">
+              <p class="play-table__msg play-table__msg--system">
+                卓UI試作です。同期は未接続の場合ローカルのみです。
+              </p>
+            </div>
+            <div class="play-table__composer">
+              <input
+                class="play-table__input"
+                id="play-chat-input"
+                type="text"
+                placeholder="メッセージ"
+                aria-label="チャット入力"
+              />
+              <button type="button" class="play-table__send" id="play-btn-send">送信</button>
+              <button type="button" class="play-table__tool" id="play-btn-dice" title="1d100">
+                1d100
+              </button>
+              <span class="play-table__dice-out" id="play-dice-result" aria-live="polite"></span>
+            </div>
+          </section>
         </div>
       </main>
     </div>
+
+    <div
+      id="play-context-menu"
+      class="play-context-menu"
+      role="menu"
+      hidden
+      aria-hidden="true"
+    >
+      <button type="button" class="play-context-menu__item" data-action="public">
+        全体に公開する
+      </button>
+      <button type="button" class="play-context-menu__item" data-action="private">
+        非公開にする
+      </button>
+      <button type="button" class="play-context-menu__item" data-action="share">
+        他者に公開
+      </button>
+      <button type="button" class="play-context-menu__item" data-action="zoom">
+        拡大表示
+      </button>
+    </div>
+
+    <div id="play-hint-zoom" class="play-hint-zoom" hidden aria-hidden="true">
+      <div class="play-hint-zoom__backdrop" data-close-zoom></div>
+      <div class="play-hint-zoom__panel" role="dialog" aria-labelledby="play-hint-zoom-title">
+        <h2 id="play-hint-zoom-title" class="play-hint-zoom__title">ヒント拡大</h2>
+        <p id="play-hint-zoom-body" class="play-hint-zoom__body"></p>
+        <button type="button" class="play-hint-zoom__close" data-close-zoom>閉じる</button>
+      </div>
+    </div>
+
+    <div id="play-login-modal" class="play-modal" hidden aria-hidden="true">
+      <div class="play-modal__backdrop" data-close-login></div>
+      <div
+        class="play-modal__panel play-modal__panel--login"
+        role="dialog"
+        aria-labelledby="play-login-title"
+        aria-modal="true"
+      >
+        <h2 id="play-login-title" class="play-modal__title">卓へログイン</h2>
+        <p class="play-modal__note">
+          キャラを選びパスワードを入力してください。<strong>観戦者</strong>はパスワード不要です（各キャラの仮パスワードは HO に記載）。
+        </p>
+        <label class="play-modal__field">
+          <span class="play-modal__label">参加身分</span>
+          <select id="play-login-role" class="play-modal__select">
+            <option value="PL1">PL1 神代 玲司</option>
+            <option value="PL2">PL2 三枝 悠真</option>
+            <option value="PL3">PL3 深見 朱莉</option>
+            <option value="PL4">PL4 戸倉 蓮</option>
+            <option value="spectator">観戦者</option>
+          </select>
+        </label>
+        <label class="play-modal__field">
+          <span class="play-modal__label">パスワード</span>
+          <input
+            id="play-login-password"
+            type="password"
+            class="play-modal__input"
+            autocomplete="current-password"
+            aria-describedby="play-login-pw-hint"
+          />
+          <span id="play-login-pw-hint" class="play-modal__hint"
+            >観戦者を選ぶと入力不要です。</span
+          >
+        </label>
+        <p id="play-login-error" class="play-modal__error" role="alert" hidden></p>
+        <div class="play-modal__actions">
+          <button type="button" class="play-modal__btn play-modal__btn--ghost" data-close-login>
+            キャンセル
+          </button>
+          <button type="button" class="play-modal__btn play-modal__btn--primary" id="play-login-submit">
+            次へ（確認）
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="play-login-confirm" class="play-modal" hidden aria-hidden="true">
+      <div class="play-modal__backdrop" data-close-confirm></div>
+      <div
+        class="play-modal__panel"
+        role="dialog"
+        aria-labelledby="play-login-confirm-title"
+        aria-modal="true"
+      >
+        <h2 id="play-login-confirm-title" class="play-modal__title">入卓の確認</h2>
+        <p id="play-login-confirm-msg" class="play-modal__body"></p>
+        <div class="play-modal__actions">
+          <button type="button" class="play-modal__btn play-modal__btn--ghost" id="play-login-confirm-no">
+            キャンセル
+          </button>
+          <button type="button" class="play-modal__btn play-modal__btn--primary" id="play-login-confirm-yes">
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="play-share-modal" class="play-modal" hidden aria-hidden="true">
+      <div class="play-modal__backdrop" data-close-share></div>
+      <div
+        class="play-modal__panel"
+        role="dialog"
+        aria-labelledby="play-share-title"
+        aria-modal="true"
+      >
+        <h2 id="play-share-title" class="play-modal__title">公開先を選択</h2>
+        <p class="play-modal__body">このヒントを公開する相手を選んでください（複数選択可）。</p>
+        <div id="play-share-role-list" class="play-share-list"></div>
+        <div class="play-modal__actions">
+          <button type="button" class="play-modal__btn play-modal__btn--ghost" data-close-share>
+            キャンセル
+          </button>
+          <button type="button" class="play-modal__btn play-modal__btn--primary" id="play-share-apply">
+            公開する
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/js/play.js"></script>
   </body>
 </html>

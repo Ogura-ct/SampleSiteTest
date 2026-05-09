@@ -1,0 +1,222 @@
+/* アドグル — 作中の検索ポータル（Google 風レイアウト・別ブランド） */
+
+.adoguru {
+  min-height: 100vh;
+  background: #fff;
+  color: #202124;
+  font-family: "Noto Sans JP", Arial, sans-serif;
+}
+
+.adoguru a {
+  color: #1a0dab;
+  text-decoration: none;
+}
+.adoguru a:hover {
+  text-decoration: underline;
+}
+
+.adoguru-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #ebebeb;
+  flex-wrap: wrap;
+}
+
+.adoguru-header--home {
+  border-bottom: none;
+  justify-content: flex-end;
+}
+
+.adoguru-logo-sm {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #5f6368;
+}
+
+.adoguru-logo-sm span {
+  color: #4285f4;
+}
+
+.adoguru-search-form-header {
+  flex: 1;
+  max-width: 720px;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.adoguru-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  padding: 0.35rem 0.85rem;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.08);
+}
+
+.adoguru-bar:focus-within {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.18);
+  border-color: transparent;
+}
+
+.adoguru-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.35rem 0;
+  min-width: 0;
+}
+
+.adoguru-btn {
+  padding: 0.45rem 1rem;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  background: #f8f9fa;
+  color: #3c4043;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.adoguru-btn:hover {
+  border-color: #dadce0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+}
+
+.adoguru-btn--primary {
+  background: #4285f4;
+  color: #fff;
+  border-color: #4285f4;
+}
+
+.adoguru-btn--primary:hover {
+  background: #3367d6;
+  border-color: #3367d6;
+}
+
+.adoguru-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8vh 1rem 4rem;
+  text-align: center;
+}
+
+.adoguru-logo-big {
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+.adoguru-logo-big .g1 {
+  color: #4285f4;
+}
+.adoguru-logo-big .g2 {
+  color: #ea4335;
+}
+.adoguru-logo-big .g3 {
+  color: #fbbc04;
+}
+.adoguru-logo-big .g4 {
+  color: #4285f4;
+}
+.adoguru-logo-big .g5 {
+  color: #34a853;
+}
+.adoguru-logo-big .g6 {
+  color: #ea4335;
+}
+
+.adoguru-home-form {
+  width: 100%;
+  max-width: 584px;
+}
+
+.adoguru-home-form .adoguru-bar {
+  border-radius: 24px;
+  padding: 0.5rem 1rem;
+}
+
+.adoguru-home-actions {
+  margin-top: 1.75rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.adoguru-meta {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #70757a;
+}
+
+.adoguru-results-wrap {
+  border-top: 1px solid #ebebeb;
+}
+
+.adoguru-results {
+  max-width: 720px;
+  padding: 1rem 1.5rem 3rem;
+  margin: 0 auto;
+}
+
+.adoguru-results-count {
+  font-size: 0.85rem;
+  color: #70757a;
+  margin-bottom: 1rem;
+}
+
+.adoguru-result {
+  margin-bottom: 1.75rem;
+  max-width: 640px;
+}
+
+.adoguru-result-url {
+  font-size: 0.85rem;
+  color: #202124;
+  margin-bottom: 0.15rem;
+}
+
+.adoguru-result-title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 0 0.35rem;
+}
+
+.adoguru-result-title a {
+  color: #1a0dab;
+}
+
+.adoguru-result-title a:visited {
+  color: #681da8;
+}
+
+.adoguru-result-snippet {
+  font-size: 0.875rem;
+  line-height: 1.58;
+  color: #4d5156;
+  margin: 0;
+}
+
+.adoguru-empty {
+  padding: 2rem 1rem;
+  color: #70757a;
+  font-size: 0.95rem;
+}
+
+.adoguru-footer-links {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.adoguru-hidden {
+  display: none !important;
+}

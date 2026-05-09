@@ -1,0 +1,127 @@
+/* 作中世界: 明るいニュース／地方紙風 */
+
+.story-site {
+  min-height: 100vh;
+  background: #f4f1ea;
+  color: #1a1a1a;
+  font-family: "Noto Sans JP", "Georgia", serif;
+}
+
+.story-site a {
+  color: #1a4d8f;
+}
+
+.story-site a:hover {
+  text-decoration: underline;
+}
+
+.story-topbar {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.story-brand {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 1rem;
+}
+
+.story-brand span {
+  font-weight: 400;
+  opacity: 0.85;
+  margin-left: 0.35rem;
+  font-size: 0.85rem;
+}
+
+.story-topnav {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.story-topnav a {
+  color: #bdc3c7;
+}
+
+.story-topnav a:hover {
+  color: #fff;
+}
+
+.story-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.story-kicker {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8a8175;
+  margin: 0 0 0.5rem;
+}
+
+.story-title {
+  font-size: 1.65rem;
+  line-height: 1.35;
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+}
+
+.story-byline {
+  font-size: 0.85rem;
+  color: #5c5548;
+  margin: 0 0 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d4cec3;
+}
+
+.story-lead {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0 0 1.25rem;
+  color: #2d2a26;
+}
+
+.story-body p {
+  font-size: 0.98rem;
+  line-height: 1.85;
+  margin: 0 0 1rem;
+  color: #333;
+}
+
+.story-pullquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: #e8e3d8;
+  border-left: 4px solid #8b7355;
+  font-style: italic;
+  color: #3d3830;
+}
+
+.story-tagline {
+  font-size: 0.8rem;
+  color: #7a7265;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d4cec3;
+}
+
+.story-dev-footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  background: #e8e3d8;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #5c5548;
+}
+
+.story-dev-footer a {
+  font-weight: 600;
+}

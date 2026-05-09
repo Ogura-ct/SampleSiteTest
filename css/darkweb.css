@@ -1,0 +1,353 @@
+/* ダークウェブ風 — 作中フィクション用（単独レイアウト） */
+
+.darkweb {
+  --dw-bg: #050608;
+  --dw-panel: #0c0e12;
+  --dw-border: #1a2332;
+  --dw-text: #c8cdd5;
+  --dw-muted: #6b7280;
+  --dw-accent: #39ff14;
+  --dw-accent-dim: rgba(57, 255, 20, 0.35);
+  --dw-warn: #f59e0b;
+  --dw-font: "Noto Sans JP", system-ui, sans-serif;
+  --dw-mono: "IBM Plex Mono", ui-monospace, monospace;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--dw-bg);
+  color: var(--dw-text);
+  font-family: var(--dw-font);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.darkweb *,
+.darkweb *::before,
+.darkweb *::after {
+  box-sizing: border-box;
+}
+
+.darkweb a {
+  color: var(--dw-accent);
+  text-decoration: none;
+}
+.darkweb a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 8px var(--dw-accent-dim);
+}
+
+.darkweb-wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+.darkweb-scan {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.6) 2px,
+    rgba(0, 0, 0, 0.6) 3px
+  );
+  z-index: 9999;
+}
+
+.darkweb-banner {
+  border: 1px solid var(--dw-warn);
+  background: rgba(245, 158, 11, 0.08);
+  color: #fcd34d;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.82rem;
+  margin-bottom: 1rem;
+  font-family: var(--dw-mono);
+}
+
+.darkweb-banner strong {
+  color: #fde68a;
+}
+
+.darkweb-head {
+  border: 1px solid var(--dw-border);
+  background: var(--dw-panel);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.06);
+}
+
+.darkweb-onion {
+  font-family: var(--dw-mono);
+  font-size: 0.8rem;
+  color: var(--dw-accent);
+  word-break: break-all;
+  margin: 0 0 0.35rem;
+}
+
+.darkweb-title {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dw-text);
+}
+
+.darkweb-sub {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: var(--dw-muted);
+  font-family: var(--dw-mono);
+}
+
+.darkweb-status {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-family: var(--dw-mono);
+  font-size: 0.75rem;
+  color: var(--dw-muted);
+}
+
+.darkweb-status span {
+  color: var(--dw-accent);
+}
+
+.darkweb-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .darkweb-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.darkweb-card {
+  border: 1px solid var(--dw-border);
+  background: var(--dw-panel);
+  padding: 1rem;
+}
+
+.darkweb-card h2 {
+  margin: 0 0 0.65rem;
+  font-size: 0.95rem;
+  color: var(--dw-accent);
+  font-family: var(--dw-mono);
+  letter-spacing: 0.04em;
+}
+
+.darkweb-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.darkweb-card li {
+  margin-bottom: 0.45rem;
+  font-size: 0.88rem;
+}
+
+.darkweb-thread {
+  border-left: 2px solid var(--dw-accent-dim);
+  padding-left: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.darkweb-thread:last-child {
+  margin-bottom: 0;
+}
+
+.darkweb-meta {
+  font-family: var(--dw-mono);
+  font-size: 0.72rem;
+  color: var(--dw-muted);
+  margin-bottom: 0.25rem;
+}
+
+.darkweb-thread p {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.darkweb-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--dw-border);
+  font-size: 0.8rem;
+  color: var(--dw-muted);
+  font-family: var(--dw-mono);
+}
+
+.darkweb-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.darkweb-note {
+  font-size: 0.75rem;
+  color: var(--dw-muted);
+}
+
+.dw-board {
+  border: 1px solid var(--dw-border);
+  background: var(--dw-panel);
+  margin-top: 1rem;
+}
+
+.dw-board-head {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--dw-border);
+  font-family: var(--dw-mono);
+  color: var(--dw-accent);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+.dw-thread-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0.85rem;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--dw-border);
+  align-items: start;
+}
+
+.dw-thread-row:last-child {
+  border-bottom: 0;
+}
+
+.dw-thumb {
+  width: 72px;
+  height: 54px;
+  object-fit: cover;
+  border: 1px solid var(--dw-border);
+  border-radius: 4px;
+  background: #080a0d;
+}
+
+.dw-topic {
+  color: var(--dw-text);
+  font-size: 0.9rem;
+}
+
+.dw-topic a {
+  color: var(--dw-text);
+}
+
+.dw-topic a:hover {
+  color: var(--dw-accent);
+}
+
+.dw-row-meta {
+  margin-top: 0.25rem;
+  font-family: var(--dw-mono);
+  color: var(--dw-muted);
+  font-size: 0.72rem;
+}
+
+.dw-thread-post {
+  border-top: 1px solid var(--dw-border);
+  padding: 0.65rem 0;
+}
+
+.dw-thread-post:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.dw-post-head {
+  font-family: var(--dw-mono);
+  font-size: 0.76rem;
+  color: var(--dw-muted);
+  margin-bottom: 0.2rem;
+}
+
+.dw-post-body {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--dw-text);
+  white-space: pre-wrap;
+}
+
+.dw-auth-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.dw-input {
+  flex: 1;
+  min-width: 0;
+  background: #07090d;
+  border: 1px solid var(--dw-border);
+  color: var(--dw-text);
+  padding: 0.55rem 0.7rem;
+  font-family: var(--dw-mono);
+}
+
+.dw-btn {
+  background: #0c1b12;
+  border: 1px solid var(--dw-accent-dim);
+  color: var(--dw-accent);
+  padding: 0.55rem 0.85rem;
+  font-family: var(--dw-mono);
+  cursor: pointer;
+}
+
+.dw-btn:hover {
+  box-shadow: 0 0 8px var(--dw-accent-dim);
+}
+
+.dw-private-layout {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 760px) {
+  .dw-private-layout {
+    grid-template-columns: 220px 1fr;
+    align-items: start;
+  }
+}
+
+.dw-sidebar {
+  border: 1px solid var(--dw-border);
+  background: var(--dw-panel);
+  padding: 0.9rem;
+}
+
+.dw-sidebar h2 {
+  margin: 0 0 0.65rem;
+  font-size: 0.9rem;
+  color: var(--dw-accent);
+  font-family: var(--dw-mono);
+}
+
+.dw-sidebar ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.dw-sidebar li {
+  margin-bottom: 0.42rem;
+  font-size: 0.84rem;
+}
+
+.dw-nav-link {
+  color: var(--dw-text);
+}
+
+.dw-nav-link.is-active {
+  color: var(--dw-accent);
+  text-shadow: 0 0 8px var(--dw-accent-dim);
+}
+
+.dw-hidden {
+  display: none;
+}

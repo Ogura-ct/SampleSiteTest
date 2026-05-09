@@ -1,0 +1,18 @@
+{
+  "name": "murder-mystery-web",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "node scripts/run-with-installed-node.cjs run-dev.mjs",
+    "dev:win": ".\\dev.cmd",
+    "build": "node scripts/run-with-installed-node.cjs run-build.mjs",
+    "preview": "node scripts/run-with-installed-node.cjs run-preview.mjs"
+  },
+  "devDependencies": {
+    "vite": "^6.3.4"
+  }
+}
