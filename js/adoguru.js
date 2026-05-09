@@ -4,6 +4,16 @@
  */
 var INDEX_URL = "../data/search-index.json";
 
+function resolveResultHref(rawUrl) {
+  var s = String(rawUrl || "");
+  if (!s) return "";
+  if (/^(https?:|mailto:|tel:|#)/i.test(s)) return s;
+  if (s.startsWith("./") || s.startsWith("../")) return s;
+  if (s.startsWith("/")) return ".." + s;
+  if (s.startsWith("story/")) return "./" + s.slice("story/".length);
+  return "./" + s;
+}
+
 function normalizeQuery(raw) {
   if (!raw || typeof raw !== "string") return "";
   return raw
@@ -89,7 +99,7 @@ function renderResults(container, pages, queryDisplay) {
     var h3 = document.createElement("h3");
     h3.className = "adoguru-result-title";
     var a = document.createElement("a");
-    a.href = p.url;
+    a.href = resolveResultHref(p.url);
     a.textContent = p.title;
     h3.appendChild(a);
     var sn = document.createElement("p");
